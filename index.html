@@ -1,88 +1,557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style_Examen.css">
-    <title>Examen</title>
-</head>
-
-<body>
-    <script>
-        function Corrige() {
-            var Q1 = "La réponse à la question 1 est incorrecte";
-            var Q2 = "La réponse à la question 2 est incorrecte";
-            var Q3 = "La réponse à la question 3 est incorrecte";
-            if ((document.getElementById('Q11').checked == false) && (document.getElementById('Q12').checked == false) && (document.getElementById('Q13').checked == true) && (document.getElementById('Q14').checked == false)) {
-                Q1 = "La réponse à la question 1 est correcte";
-            }
-            if ((document.getElementById('Q21').checked == true) && (document.getElementById('Q22').checked == false) && (document.getElementById('Q23').checked == false) && (document.getElementById('Q24').checked == false)) {
-                Q2 = "La réponse à la question 2 est correcte";
-            }
-            if ((document.getElementById('Q31').checked == false) && (document.getElementById('Q32').checked == true) && (document.getElementById('Q33').checked == false) && (document.getElementById('Q34').checked == true) && (document.getElementById('Q35').checked == false)) {
-                Q3 = "La réponse à la question 3 est correcte";
-            }
-            alert(Q1 + "\n" + Q2 + "\n" + Q3);
-        }
-        function vider() {
-            document.getElementById('Q11').checked = false;
-            document.getElementById('Q12').checked = false;
-            document.getElementById('Q13').checked = false;
-            document.getElementById('Q14').checked = false;
-            document.getElementById('Q21').checked = false;
-            document.getElementById('Q22').checked = false;
-            document.getElementById('Q23').checked = false;
-            document.getElementById('Q24').checked = false;
-            document.getElementById('Q31').checked = false;
-            document.getElementById('Q32').checked = false;
-            document.getElementById('Q33').checked = false;
-            document.getElementById('Q34').checked = false;
-            document.getElementById('Q35').checked = false;
-        }
-    </script>
-    <fieldset>
-        <legend>
-            <h4>Examen</h4>
-        </legend>
-        <h1 id="kk">L'utilisation des procédés RAID1 et RAID5 Test d'auto-évalution</h1>
-        <hr>
-        <h4 id="jj">Qestionnaire sous forme de QCM les questions peuveut comporte une ou plusieurs bonnes réponses.</h4>
-        <h4>Question 1 :</h4>
-        <p>Quel est le type de disque système qui réalise une copie exacte de toutes les données d'une partition disque
-            dans autre partition ?</p>
-        <ul>
-            <li><input type="checkbox" id="Q11"> RAID.</li>
-            <li><input type="checkbox" id="Q12"> Sauvegarde disque.</li>
-            <li><input type="checkbox" id="Q13"> Mise en miroir.</li>
-            <li><input type="checkbox" id="Q14"> Dépannage à chaud.</li>
-        </ul>
-        <h4>Question 2 :</h4>
-        <p>Quel est le type de disque système qui utilise de 3 a 32 disques physiques et est aussi connu sous le nom de
-            RAID5 ?</p>
-        <ul>
-            <li><input type="checkbox" id="Q21"> Agrégats par bandes avec parité.</li>
-            <li><input type="checkbox" id="Q22"> Agrégats par bandes sans parité.</li>
-            <li><input type="checkbox" id="Q23"> Disques en miroir.</li>
-            <li><input type="checkbox" id="Q24"> Agrégats par bandes avec parité répétitives.</li>
-        </ul>
-        <h4>Question 3 :</h4>
-        <p>Quel sont les types de disques qui assurent la tolérance de pannes ?</p>
-        <ul>
-            <li><input type="checkbox" id="Q31"> Les Agrégats de partition.</li>
-            <li><input type="checkbox" id="Q32"> Les Agrégats par bandes avec parité.</li>
-            <li><input type="checkbox" id="Q33"> Les Agrégats par bandes sans parité.</li>
-            <li><input type="checkbox" id="Q34"> Les disques en miroir.</li>
-            <li><input type="checkbox" id="Q35"> RAID de niveau 0.</li>
-        </ul>
-
-        <div id="But">
-            <a href="Correction_Examen.html"><button>Correction</button></a>
-            <button onclick="vider()">Effacer</button>
-            <button onclick="Corrige()">Corrigé</button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css ">
+    <title>rs_drawz</title>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand logo-text" href="#">rs_drawz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">   
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
-    </fieldset>
-</body>
+      </div>
+    </nav>
 
+    <section id="home">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h1 class="text-white display-4">ELLARUM VANGA!! ALWAYS WELCOMES YOU!</h1>
+            <P class="text-white">This is an official site of <b>Mr.Sabarish Ramesh</b>.</P>
+            <a href="#contact" class="btn btn-brand">Contact</a>   
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="containers">
+        <div class="row align-items-center">
+          <div class="col-12 section-intro">
+            <h1>Our services</h1>
+            <div class="hline"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bxs-pencil'></i>
+              </div>
+              <h4 class="title-sm mt-4">PENCIL SKETCHing</h4>
+              <p>We are proving high quality sketchs 
+              </p>
+          </div>
+          <div class="col-lg-4 col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bx-book'></i>
+              </div>
+              <h4 class="title-sm mt-4">Book Designing</h4>
+              <p>here we are designing book's style
+              </p>
+          </div>
+          <div class="col-lg-4  col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bx-brain'></i>
+              </div>
+              <h4 class="title-sm mt-4">AI Designing</h4>
+              <p>here we are designing with AI 
+              </p>
+          </div>
+          <div class="col-lg-4  col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bx-laptop' ></i>
+              </div>
+              <h4 class="title-sm mt-4">Cloud Designing</h4>
+              <p>here we are maintainig database to store our projects
+              </p>
+          </div>
+          <div class="col-lg-4 col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bxs-bank' ></i>
+              </div>
+              <h4 class="title-sm mt-4">Art designing</h4>
+              <p>here we are going to create a course about ART 
+              </p>
+          </div>
+          <div class="col-lg-4 col-sm-6 p-4">
+              <div class="icon-box">
+                <i class='bx bxs-camera'></i>
+              </div>
+              <h4 class="title-sm mt-4">Photography</h4>
+              <p>here we are teaching Photography
+              </p>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+    
+<div id="ghj"> </div>
+  <section id="portfolio" class="row">
+        <div class="col-lg-4 col-sm-6 feature d-flex">
+          <div class="portfolio-item"> 
+            <img src="images/art/IMG_20220924_110105.jpg" alt="">
+            <div class="portfolio-overlay">
+              <div>
+                <h3>Actress</h3>
+                <h6>pencil sketch</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 feature d-flex">
+          <div class="portfolio-item"> 
+              <img src="images/art/IMG_20221114_191017.jpg" alt="">
+              <div class="portfolio-overlay">
+                <div>
+                  <h3>Rolex</h3>
+                  <h6>3d-art</h6>
+                </div>
+              </div>
+          </div>
+        </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="portfolio-item"> 
+                <img src="images/art/rs_drawz_1671346216631277.jpg" alt="">
+                <div class="portfolio-overlay">
+                  <div>
+                    <h3>actor</h3>
+                    <h6>3D-art</h6>
+                  </div>
+                </div>
+            </div>
+          </div>
+            <div class="col-lg-4 col-sm-6 feature d-flex">
+              <div class="portfolio-item"> 
+                  <img src="images/art/rs_drawz_167134623294059.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div>
+                      <h3>madan gowri</h3>
+                      <h6>Charcol sketch</h6>
+                    </div>
+                  </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 feature d-flex">
+                <div class="portfolio-item"> 
+                    <img src="images/art/rs_drawz_1671346526620947.jpg" alt="">
+                    <div class="portfolio-overlay">
+                      <div>
+                        <h3>project title</h3>
+                        <h6>pro subtitile</h6>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 feature d-flex">
+                <div class="portfolio-item"> 
+                  <img src="images/art/rs_drawz_167134782527332.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div>
+                      <h3>project title</h3>
+                      <h6>pro subtitile</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 feature d-flex">
+                <div class="portfolio-item"> 
+                  <img src="images/art/rs_drawz_1671347624634641.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div>
+                      <h3>project title</h3>
+                      <h6>pro subtitile</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 feature d-flex">
+                <div class="portfolio-item"> 
+                  <img src="images/art/rs_drawz_1671346914054972.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div>
+                      <h3>project title</h3>
+                      <h6>pro subtitile</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 feature d-flex">
+                <div class="portfolio-item"> 
+                  <img src="images/art/rs_drawz_1671346802098623.jpg" alt="">
+                  <div class="portfolio-overlay">
+                    <div>
+                      <h3>project title</h3>
+                      <h6>pro subtitile</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </section>     
+</div> 
+
+    <section id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 section-intro">
+            <h1>Our Features</h1>
+            <div class="hline"></div>
+          </div>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 feature d-flex">
+            <div class="icon-box me-3">
+              <i class="bx bx-check"></i>
+            </div>
+            <div>
+              <h5 class="title-sm">Features</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas consequatur facilis aliquid modi! Quo.</p>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+
+  <section id="team" class="row g-0 py-0 9,">
+    <div class="col-lg-3 col-sm-6 team-member">
+        <div class="team-member-img">
+          <img src="images/bio/20230310_180937.jpg" alt="">
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-github"></i></a>
+          </div>
+        </div>
+        <div class="p-4">
+          <h5 class="title-sm mt-3 mb-0 text-white">Sabarish</h5>
+          <small class="text-white">Artist</small>
+          <div class="hline"></div>
+          <p class="text-white">classical pencil sketch artist</p>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 team-member even">
+      <div class="team-member-img">
+        <img src="images/bio/20230310_180626.jpg" alt="">
+        <div class="social-icons">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+      <div class="p-4">
+        <h5 class="title-sm mt-3 mb-0 text-white">Sabarish</h5>
+        <small class="text-white">Artist</small>
+        <div class="hline"></div>
+        <p class="text-white">classical pencil sketch artist</p>
+      </div>
+  </div>
+  <div class="col-lg-3 col-sm-6 team-member">
+    <div class="team-member-img">
+      <img src="images/bio/20230310_180925.jpg" alt="">
+      <div class="social-icons">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="#"><i class="bx bxl-github"></i></a>
+      </div>
+    </div>
+    <div class="p-4">
+      <h5 class="title-sm mt-3 mb-0 text-white">Sabarish</h5>
+      <small class="text-white">Artist</small>
+      <div class="hline"></div>
+      <p class="text-white">classical pencil sketch artist</p>
+    </div>
+</div>
+<div class="col-lg-3 col-sm-6 team-member even">
+  <div class="team-member-img">
+    <img src=".//images/bio/20230310_180935.jpg" alt="">
+    <div class="social-icons">
+      <a href="#"><i class="bx bxl-facebook"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+      <a href="#"><i class="bx bxl-github"></i></a>
+    </div>
+  </div>
+  <div class="p-4">
+    <h5 class="title-sm mt-3 mb-0 text-white">Sabarish</h5>
+    <small class="text-white">Artist</small>
+    <div class="hline"></div>
+    <p class="text-white">classical pencil sketch artist</p>
+  </div>
+</div>
+  </section>  
+    
+<section id="testimonials" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              <img src="./images/bio/DSC00820.jpg" alt="">
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><img src="./images/bio/IMG_20220527_200653.jpg" alt=""></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><img src="./images/bio/20230310_180937.jpg" alt=""></button>
+          </li>
+        </ul>
+
+
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="review">
+              <div class="stars">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt perferendis voluptatem corporis quis molestiae, ipsam atque optio et aliquid. Ex atque, rerum vel officia minus sunt ipsum fugit natus ducimus!</p>
+              <h5 class="title-sm mb-0">john doe</h5>
+              <small>web developer</small>
+            </div>
+
+
+
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="review">
+              <div class="stars">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt perferendis voluptatem corporis quis molestiae, ipsam atque optio et aliquid. Ex atque, rerum vel officia minus sunt ipsum fugit natus ducimus!</p>
+              <h5 class="title-sm mb-0">john doe</h5>
+              <small>web developer</small>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="review">
+              <div class="stars">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt perferendis voluptatem corporis quis molestiae, ipsam atque optio et aliquid. Ex atque, rerum vel officia minus sunt ipsum fugit natus ducimus!</p>
+              <h5 class="title-sm mb-0">john doe</h5>
+              <small>web developer</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section id="clients" class="bg-light">
+  <div class="container">
+    <div class="row gy-4">
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/download (1).png" alt="">
+      </div>
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/hi.png" alt="">
+      </div>
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/hi.png" alt="">
+      </div>
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/hi.png" alt="">
+      </div>
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/hi.png" alt="">
+      </div>
+      <div class=".col-lg-2 col-md-3 col-6">
+        <img src="./images/logos/hi.png" alt="">
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="./images/art/rs_drawz_1671346914054972.jpg" alt="">
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <form>
+          <div class="mb-3">
+            <small>Name</small>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>  
+          <div class="mb-3">
+            <small>Email</small>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <small>Name</small>
+            <textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
+          </div>
+            <button type="submit" class="btn btn-brand">Submit</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="py-5">
+  <div class="container" py-4>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-white">Lets build something great.</h3>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="btn btn-light">GEt started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-md-4 ">
+          <h4 class="logo-text">Lissome</h4>
+          <p>poiuyts uuytfs iuahbj onx n a  kni9 h i  o8 8obb izb 
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-github"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+            <h5 class="title-sm">Navigation</h5>
+            <div class="footer-links">
+              <a href="#">Services</a>
+              <a href="#">Our works</a>
+              <a href="#">Team</a>
+              <a href="#">Blog</a>
+            </div>
+        </div>
+        <div class="col-md-2">
+          <h5 class="title-sm">More</h5>
+          <div class="footer-links">
+            <a href="#">FAQ's</a>
+            <a href="#">Privacy</a>
+            <a href="#">license</a>
+          </div>
+        </div>
+            <div class="col-md-2">
+              <h5 class="title-sm">Contact</h5>
+              <div class="footer-links">
+                <p class="mb">Dubai mainroad,Dubai kurukusandhu,dubai (:</p>
+                <p class="mb-">8(800)316-06-42</p>
+                <p class="mb">hello@you.com</p>
+              </div> 
+            </div>
+        </div>
+    </div>      
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row justify-content-between gy-3">
+        <div class="col-md-6">
+          <p class="mb-0">cheenathana-001</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0">webpage creted by rs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
