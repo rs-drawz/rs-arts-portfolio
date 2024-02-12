@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style_Examen.css">
+    <title>Examen</title>
+</head>
+
+<body>
+    <script>
+        function Corrige() {
+            var Q1 = "La réponse à la question 1 est incorrecte";
+            var Q2 = "La réponse à la question 2 est incorrecte";
+            var Q3 = "La réponse à la question 3 est incorrecte";
+            if ((document.getElementById('Q11').checked == false) && (document.getElementById('Q12').checked == false) && (document.getElementById('Q13').checked == true) && (document.getElementById('Q14').checked == false)) {
+                Q1 = "La réponse à la question 1 est correcte";
+            }
+            if ((document.getElementById('Q21').checked == true) && (document.getElementById('Q22').checked == false) && (document.getElementById('Q23').checked == false) && (document.getElementById('Q24').checked == false)) {
+                Q2 = "La réponse à la question 2 est correcte";
+            }
+            if ((document.getElementById('Q31').checked == false) && (document.getElementById('Q32').checked == true) && (document.getElementById('Q33').checked == false) && (document.getElementById('Q34').checked == true) && (document.getElementById('Q35').checked == false)) {
+                Q3 = "La réponse à la question 3 est correcte";
+            }
+            alert(Q1 + "\n" + Q2 + "\n" + Q3);
+        }
+        function vider() {
+            document.getElementById('Q11').checked = false;
+            document.getElementById('Q12').checked = false;
+            document.getElementById('Q13').checked = false;
+            document.getElementById('Q14').checked = false;
+            document.getElementById('Q21').checked = false;
+            document.getElementById('Q22').checked = false;
+            document.getElementById('Q23').checked = false;
+            document.getElementById('Q24').checked = false;
+            document.getElementById('Q31').checked = false;
+            document.getElementById('Q32').checked = false;
+            document.getElementById('Q33').checked = false;
+            document.getElementById('Q34').checked = false;
+            document.getElementById('Q35').checked = false;
+        }
+    </script>
+    <fieldset>
+        <legend>
+            <h4>Examen</h4>
+        </legend>
+        <h1 id="kk">L'utilisation des procédés RAID1 et RAID5 Test d'auto-évalution</h1>
+        <hr>
+        <h4 id="jj">Qestionnaire sous forme de QCM les questions peuveut comporte une ou plusieurs bonnes réponses.</h4>
+        <h4>Question 1 :</h4>
+        <p>Quel est le type de disque système qui réalise une copie exacte de toutes les données d'une partition disque
+            dans autre partition ?</p>
+        <ul>
+            <li><input type="checkbox" id="Q11"> RAID.</li>
+            <li><input type="checkbox" id="Q12"> Sauvegarde disque.</li>
+            <li><input type="checkbox" id="Q13"> Mise en miroir.</li>
+            <li><input type="checkbox" id="Q14"> Dépannage à chaud.</li>
+        </ul>
+        <h4>Question 2 :</h4>
+        <p>Quel est le type de disque système qui utilise de 3 a 32 disques physiques et est aussi connu sous le nom de
+            RAID5 ?</p>
+        <ul>
+            <li><input type="checkbox" id="Q21"> Agrégats par bandes avec parité.</li>
+            <li><input type="checkbox" id="Q22"> Agrégats par bandes sans parité.</li>
+            <li><input type="checkbox" id="Q23"> Disques en miroir.</li>
+            <li><input type="checkbox" id="Q24"> Agrégats par bandes avec parité répétitives.</li>
+        </ul>
+        <h4>Question 3 :</h4>
+        <p>Quel sont les types de disques qui assurent la tolérance de pannes ?</p>
+        <ul>
+            <li><input type="checkbox" id="Q31"> Les Agrégats de partition.</li>
+            <li><input type="checkbox" id="Q32"> Les Agrégats par bandes avec parité.</li>
+            <li><input type="checkbox" id="Q33"> Les Agrégats par bandes sans parité.</li>
+            <li><input type="checkbox" id="Q34"> Les disques en miroir.</li>
+            <li><input type="checkbox" id="Q35"> RAID de niveau 0.</li>
+        </ul>
+
+        <div id="But">
+            <a href="Correction_Examen.html"><button>Correction</button></a>
+            <button onclick="vider()">Effacer</button>
+            <button onclick="Corrige()">Corrigé</button>
+        </div>
+    </fieldset>
+</body>
+
+</html>
